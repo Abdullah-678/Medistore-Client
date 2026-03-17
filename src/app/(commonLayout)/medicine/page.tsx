@@ -5,8 +5,14 @@ import { Medicine } from "@/types";
 export const dynamic="force-dynamic";
 
 export default async function MedicinePage() {
-const data= await MediServices.getMedicines();
+const data= await MediServices.getMedicines({
+  search:""
+},{
+  // cache:"no_store",
+  revalidate:10,
+});
 
+console.log(data)
   return (
  <div className="flex justify-center px-6">
   <div className="flex flex-wrap justify-between w-[1200px] gap-6">
