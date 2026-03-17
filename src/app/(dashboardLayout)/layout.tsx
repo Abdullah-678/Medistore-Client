@@ -26,7 +26,7 @@ export default function DashboardLayout({children,admin,seller,customer}:
 
 
     const user={
-      role:"SELLER",
+      role:"CUSTOMER",
     }
 
   return (

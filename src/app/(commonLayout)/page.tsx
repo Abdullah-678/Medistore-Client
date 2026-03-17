@@ -1,12 +1,12 @@
-import { authClient } from "@/lib/auth-client";
+import MedicineCard from "@/components/modules/homepage/medicineCard";
+import { MediServices } from "@/services/medi.service";
+import { Medicine } from "@/types";
 
 export default async function Home() {
 
-const session=await authClient.getSession();
-console.log(session)
   return (
   <div>
-<h1>this is home</h1>
+
   </div>
   );
 }
