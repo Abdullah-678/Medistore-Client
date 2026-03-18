@@ -1,4 +1,5 @@
 import { Medicine } from "@/types";
+import Link from "next/link";
 
 export default function MedicineCard({ medicine }: { medicine: Medicine }) {
   return (
@@ -47,13 +48,27 @@ export default function MedicineCard({ medicine }: { medicine: Medicine }) {
             : "Currently unavailable"}
         </p>
 
-        {/* Button */}
-        <button
-          disabled={medicine.stock === 0}
-          className="w-full py-2 rounded-lg font-medium bg-blue-500 text-white hover:bg-blue-600 transition disabled:bg-gray-300 disabled:cursor-not-allowed"
-        >
-          {medicine.stock > 0 ? "Add to Cart" : "Out of Stock"}
-        </button>
+        {/* Buttons Row */}
+        <div className="flex gap-2">
+
+          {/* Add to Cart */}
+          <button
+            disabled={medicine.stock === 0}
+            className="flex-1 py-2 px-1 rounded-lg text-sm font-medium bg-blue-500 text-white hover:bg-blue-600 transition disabled:bg-gray-300 disabled:cursor-not-allowed"
+          >
+            {medicine.stock > 0 ? "Add to Cart" : "Out of Stock"}
+          </button>
+
+          {/* Read More */}
+          <Link
+            href={`/medicine/${medicine.id}`}
+            className="flex-1 text-center py-2 rounded-lg text-sm font-medium border border-gray-300 text-gray-700 hover:bg-gray-100 transition"
+          >
+           Read <br /> More
+          </Link>
+
+        </div>
+
       </div>
     </div>
   );

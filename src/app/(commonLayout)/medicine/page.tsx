@@ -12,7 +12,7 @@ const data= await MediServices.getMedicines({
   revalidate:10,
 });
 
-console.log(data)
+// console.log(data)
   return (
  <div className="flex justify-center px-6">
   <div className="flex flex-wrap justify-between w-[1200px] gap-6">
