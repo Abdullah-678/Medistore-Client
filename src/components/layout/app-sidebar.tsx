@@ -18,6 +18,7 @@ import { adminRoutes } from "@/routes/adminRoutes";
 import { sellerRoutes } from "@/routes/sellerRoutes";
 import { customerRoutes } from "@/routes/customerRoutes";
 import { Route } from "@/types";
+import { Roles } from "@/constants/role";
 
 
 
@@ -25,13 +26,13 @@ export function AppSidebar({user, ...props }: {user:{role:string} & React.Compon
  
   let routes:Route[]=[];
   switch (user.role){
-    case "ADMIN":
+    case Roles.admin:
       routes=adminRoutes;
       break;
-    case "SELLER":
+    case Roles.seller:
       routes=sellerRoutes;
       break;
-    case "CUSTOMER":
+    case Roles.customer:
       routes=customerRoutes;
       break;
 

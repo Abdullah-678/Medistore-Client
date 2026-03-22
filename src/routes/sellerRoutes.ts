@@ -7,7 +7,7 @@ export const sellerRoutes:Route[]=[
       items: [
         {
           title: "Create Medicine",
-          url: "/create",
+          url: "/seller-dashboard/create-medicine",
         },
        
       
